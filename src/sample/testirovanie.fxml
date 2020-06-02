@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerTest">
+    <children>
+        <ToolBar prefHeight="40.0" prefWidth="800.0">
+            <items>
+                <Button fx:id="Back" mnemonicParsing="false" text="Назад" />
+            </items>
+        </ToolBar>
+        <Text layoutX="329.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тестирование" textAlignment="JUSTIFY" wrappingWidth="141.13671875">
+            <font>
+                <Font size="21.0" />
+            </font></Text>
+      <Text layoutX="40.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Максимальная скорость, которую система 5G позволяет использовать " textAlignment="CENTER" wrappingWidth="697.13671875">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="С какой максимальной скоростью может передвигаться абонент и сохранять интернет-соединение?" textAlignment="CENTER" wrappingWidth="697.13671875">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="question2a" layoutX="148.0" layoutY="476.0" mnemonicParsing="false" text="Технология проводная, перемещение невозможно" />
+      <CheckBox fx:id="question2b" layoutX="470.0" layoutY="476.0" mnemonicParsing="false" text="500 км/ч" />
+      <CheckBox fx:id="question2c" layoutX="551.0" layoutY="476.0" mnemonicParsing="false" text="100 км/ч" />
+      <CheckBox fx:id="question3a" layoutX="34.0" layoutY="630.0" mnemonicParsing="false" text="Через 5G соединение нельзя звонить" />
+      <CheckBox fx:id="question3b" layoutX="280.0" layoutY="630.0" mnemonicParsing="false" text="4G сеть исользует улчушеные технологии связи " />
+      <CheckBox fx:id="question3c" layoutX="575.0" layoutY="630.0" mnemonicParsing="false" text="5G сеть быстрее и надежнее" />
+      <Text layoutX="190.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Чем отличает соединение 4G от 5G?" textAlignment="CENTER" wrappingWidth="396.13671875">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Button fx:id="check" layoutX="361.0" layoutY="728.0" mnemonicParsing="false" text="Проверить" />
+      <CheckBox fx:id="question1a" layoutX="270.0" layoutY="307.0" mnemonicParsing="false" text="20 Гб/с" />
+      <CheckBox fx:id="question1b" layoutX="352.0" layoutY="307.0" mnemonicParsing="false" text="100 Мб/с" />
+      <CheckBox fx:id="question1c" layoutX="447.0" layoutY="307.0" mnemonicParsing="false" text="5 Км/ч" />
+    </children>
+</AnchorPane>
