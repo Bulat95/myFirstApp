@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,8 +13,6 @@ import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 
 public class ControllerTest {
-
-    boolean answer1a;
 
     @FXML
     private ResourceBundle resources;
@@ -54,40 +53,46 @@ public class ControllerTest {
     @FXML
     private CheckBox question1c;
 
+
+    public String string;
+
     @FXML
     void initialize() {
-        Back.setOnAction(event -> {
-            Back.getScene().getWindow().hide();
+        if(question1a.isSelected()){
+            string = "вы сдали!";
+            Test test = new Test();
+            test.setMethod(string);
+        }
+        else{
+            Test test = new Test();
+            test.setMethod(string);
+            string = "вы не сдали!";}
 
-            FXMLLoader loaderOne = new FXMLLoader();
-            loaderOne.setLocation(getClass().getResource("sample.fxml"));
+        Back.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("app.fxml"));
 
             try {
-                loaderOne.load();
-                Parent rootRT = loaderOne.getRoot();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(rootRT));
-                stage.showAndWait();
+                loader.load();
+                Parent root = loader.getRoot();
+                Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
         });
-        if(question1a.isSelected()){
-            answer1a = true;
-        }
         check.setOnAction(event -> {
-            check.getScene().getWindow().hide();
-
-            FXMLLoader loaderCheck = new FXMLLoader();
-            loaderCheck.setLocation(getClass().getResource("/sample/sample.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("check.fxml"));
 
             try {
-                loaderCheck.load();
-                Parent rootCheck = loaderCheck.getRoot();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(rootCheck));
-                stage.showAndWait();
+                loader.load();
+                Parent root = loader.getRoot();
+                Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

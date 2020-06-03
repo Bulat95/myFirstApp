@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,33 +31,30 @@ public class Controller {
     @FXML
     void initialize() {
         generalPage.setOnAction(event -> {
-            generalPage.getScene().getWindow().hide();
-
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("app.fxml"));
+            loader.setLocation(getClass().getResource("sample.fxml"));
 
             try {
                 loader.load();
                 Parent root = loader.getRoot();
-                Stage stage = new Stage();
+                Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
-                stage.showAndWait();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
         });
         calcPage.setOnAction(event -> {
-            calcPage.getScene().getWindow().hide();
-            FXMLLoader loaderTest = new FXMLLoader();
-            loaderTest.setLocation(getClass().getResource("testirovanie.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("testirovanie.fxml"));
 
             try {
-                loaderTest.load();
-                Parent rootTest = loaderTest.getRoot();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(rootTest));
-                stage.showAndWait();
+                loader.load();
+                Parent root = loader.getRoot();
+                Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
